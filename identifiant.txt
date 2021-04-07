@@ -1,0 +1,7 @@
+1;Arsene;Lupin;Monsieur;arsene.lupin@laposte.net;64000;2021-03-01;coucou123;Acquéreur
+2;Trujillo;Laura;Madame;;64000;82000-02-07;mdp;Propriétaire
+3;Verdier;Amélie;Madame;verdierame@eisti.eu;64000;2021-03-26;sacrebleu;Propriétaire
+4;Michael;Scott;Monsieur;michou@theoffice.eu;35000;2021-03-12;janbigboobs;Acquéreur
+5;Trujillo;Lo;Monsieur;lolo.trujillo@laposte.net;59000;2021-03-27;ahahah;Acquéreur
+6;ciaurriz;marie;Madame;marie.ciaurriz@yahoo.fr;64000;1150-06-21;cc;Acquéreur
+7;Trujillo;Laura;Madame;lt@truc.fr;64000;2021-03-09;a;Acquéreur

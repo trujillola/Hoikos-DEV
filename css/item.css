@@ -1,0 +1,272 @@
+/* CSS Janvier 2021 by Amélie VERDIER and Laura TRUJILLO */
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.mySlides {display: none}
+
+footer {position: relative; bottom: 0; left: 0; right: 0}
+
+.myButton {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 80px;
+	left:88%;
+	z-index:1;
+	background-color:#37423a;
+	border-radius:70px;
+	border:1px solid #37423a;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:23px 18px;
+	text-decoration:none;
+	
+}
+.myButton:hover {
+	background-color:#000000;
+}
+.carte{
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.padding{
+	padding:8px 16px!important;
+}
+
+.affiche-milieu{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+}
+
+.affiche-haut{
+	position:absolute;
+	top:1%;
+	left:1%;
+}
+
+.position-conteneur{
+	position:relative;
+}
+
+.boutton{
+	border:none;
+	display:inline-block;
+	padding:8px 16px;
+	vertical-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	background-color:inherit;
+	text-align:center;
+	cursor:pointer;
+	white-space:nowrap;
+	white-space:normal;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+	
+.myinput{
+	padding:1%;
+	display:block;
+	border:none;
+	border-bottom:1px solid #ccc;
+	width:98%;
+	font-family: "Amatic SC", sans-serif;
+	font-weight: bolder;
+}
+
+.centre{
+	/*dispautolay:inline-block;*/
+	width:auto;
+	text-align:center;
+}
+
+.bord{
+	border:1px solid #ccc;
+}	
+.bord-bas{
+	border-bottom:1px solid #ccc!important;
+}
+.bord-gris-clair{
+	border-color:#f1f1f1!important;
+}
+
+.blanc{
+	color:#000!important;
+	background-color:#fff!important;
+}
+
+.noir{
+	color:#fff!important;
+	background-color:#000!important;
+}	
+
+.texte-gris{color:#757575!important}
+
+
+.haut{
+	position:fixed;
+	width:100%;
+	z-index: 1;
+	top:0;
+	left : 0;
+}
+
+.conteneur{
+	padding:0.01em 16px;
+}
+
+.conteneur:after,.conteneur:before,.bar:before,.bar:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.padding{
+	padding:8px 16px!important;
+}
+.padding-16{
+	padding-top:16px!important;
+	padding-bottom:16px!important;
+}
+.padding-24{
+	padding-top:24px!important;
+	padding-bottom:24px!important;
+}
+.padding-32{
+	padding-top:32px!important;
+	padding-bottom:32px!important;
+}
+.padding-64{
+	padding-top:64px!important;
+	padding-bottom:64px!important;
+}
+
+.section{
+	margin-top:16px!important;
+	margin-bottom:16px!important;
+}
+
+.espace-lettres{letter-spacing:4px;}
+.large{font-size:18px!important;}
+.xxlarge{font-size:36px!important;}
+.xlarge{font-size:24px!important;}
+
+.bar-item{
+	padding:8px 16px;
+	float:left;
+	width:auto;
+	border:none;
+	display:block;
+	outline:0;
+	text-align:center;
+}
+
+.droite{
+	float:right!important;
+	padding-right:20px;
+}	
+.gauche{
+	float:left!important;
+}
+
+.bar{
+	width:100%;
+	overflow:inline-block;
+	padding:8px 16px;
+	float:left;
+	border:none;
+	display:block;
+	outline:0;
+	white-space:normal;
+	position:static;
+	white-space:normal;
+}
+	
+.bar:before,.bar:after,.w3-row:after,.w3-row:before{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.rangee-padding{
+	padding:0 40px;
+}
+.rangee-padding:after,.rangee-padding:before{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.colonne{
+	float:left;
+}
+
+.colonne.s2{
+	width:14.2%;
+	margin-left:2%;
+
+}
+.colonne.s6{
+	width:49.99999%;
+}
+	
+.bord-gauche{
+	border-left:1px solid #ccc!important;
+}
+
+.bord-droit{
+	border-right:1px solid #ccc!important;
+}
+
+.bas-gauche{
+	position:absolute;
+	left:0;
+	bottom:3%;
+}
+
+.opacité{
+	opacity:0.60;
+}
+.hover-opacité-off:hover{
+	opacity:1;
+}
+
+.invisible{
+	opacity: 0;
+}
+
+.invisible:hover{
+	opacity: 1;
+}
+
+.contenu{
+	margin-left:auto;
+	margin-right:auto;
+	max-width:980px;
+	min-width:490px;
+}
+	
+.appart{
+	margin-top: 5%;
+	text-align:center;
+}
+.favori:hover{
+	cursor:pointer;
+}
+
+hr{
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+	
