@@ -21,7 +21,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 <?php
   session_start();
   include './php/varSession.php';
-  //echo '<script language="Javascript"> alert ("'.$_SESSION["userID"].'") </script>';
+
+  $servername='localhost';
+  $username='laura';
+  $password='laura';
+  $dbname='Hoikos';
+  // Create connections
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  include './php/recupereFavoris.php';
+  $conn->close();
+
   $fav=$_SESSION['userFav'];
 ?>
 
@@ -31,7 +44,6 @@ function changeFavori(id){
   //Ajax
 	var identifiant=id;
   var classe = document.getElementById(identifiant).classList;
-  //alert(classe);
 	
 	xhttp = new XMLHttpRequest(); 
 	 
@@ -53,8 +65,6 @@ function changeFavori(id){
 	 
 };
 </script>
-
-
 
 
 
@@ -119,10 +129,10 @@ function changeFavori(id){
   <!-- Grille -->
   <div class="grid">
 
-
   <?php
   foreach ($_SESSION['tableau'] as $item){
    if($item['cat']==0){
+    echo '<script language="Javascript"> alert ("'.in_array($item['id'],$fav).'") </script>';
      if (in_array($item['id'],$fav)) {
       $class="favori fa fa-heart";
      }else{

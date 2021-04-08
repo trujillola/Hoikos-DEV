@@ -30,11 +30,16 @@
   <div class="bar blanc espace-lettres padding carte">
     <a href="./index.php" class="bar-item boutton"><b>H</b> Oïkos</a>
      <div class="droite">
-    <a href="connexion.php" class="w3-bar-item boutton"><?php
-      if (isset($_SESSION['userID'])) {       
+     <a href="connexion.php" class="w3-bar-item boutton"><?php
+        if (isset($_SESSION['userID'])) {       
           echo 'Me déconnecter';
         }else{
           echo 'Connexion';
+        }
+        ?></a>
+      <a href="espaceAcquereur.php" class="w3-bar-item boutton"><?php
+        if (isset($_SESSION['userID'])) {       
+          echo 'Mon espace';
         }
         ?></a>
       <a href="./index.php#about" class="w3-bar-item boutton">À propos</a>

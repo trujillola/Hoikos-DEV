@@ -10,7 +10,7 @@ $username='laura';
 $password='laura';
 $dbname='Hoikos';
 
-// Create connection
+// Create connections
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
@@ -47,7 +47,6 @@ if ($result->num_rows > 0) {
         $j=0;
         while($row2 = $res->fetch_assoc()) {
             $atout[$j]=$row2["libelle"];
-            //echo "Chemin : " . $atout[$j]."<br>";
             $j=$j+1;
         }
     }
@@ -62,7 +61,6 @@ if ($result->num_rows > 0) {
         'atout' => $atout,
         'adresse' => $row["adresse"],
         'mail' => $row["email"],
-       // 'favoris' => $line[11]
      );
      $i=$i+1;
   }
@@ -70,4 +68,5 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 $conn->close();
+
 ?>

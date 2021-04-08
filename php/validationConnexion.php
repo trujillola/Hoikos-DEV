@@ -37,5 +37,18 @@ if (!empty($_POST)) {
         echo '<script language="Javascript"> alert ("Identifiant ou mot de passe incorrect !") </script>';
     }
 }
+  //echo '<script language="Javascript"> alert ("'.$_SESSION["userID"].'") </script>';
+  $servername='localhost';
+  $username='laura';
+  $password='laura';
+  $dbname='Hoikos';
 
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  include './php/recupereFavoris.php';
+  $conn->close();
 ?>
