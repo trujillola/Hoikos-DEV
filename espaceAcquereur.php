@@ -85,7 +85,7 @@ for ($i=0; $i <count($_SESSION['userFav'])-1 ; $i++) {
   $item=$_SESSION['tableau'][$fav];
  // echo '<script language="Javascript"> alert ("'.$i.'") </script>';
  // echo '<script language="Javascript"> alert ( "fav :'.$fav.'") </script>';
-
+ echo $_SESSION['tableau'][$item['id']]['nom'];
   ?>
  <div class="item" id="<?php echo 'bien'.$item['id']?>">
       <div class="position-favoris">
@@ -97,7 +97,7 @@ for ($i=0; $i <count($_SESSION['userFav'])-1 ; $i++) {
           <p><a href="./item.php?id=<?php echo $item['id']?>" class="boutton large black card invisible">Voir l'annonce</a></p>
         </div>
       </div>
-      <p><?php echo $item['nom'] ?><br><b><?php echo $item['prix'] ?></b></p>
+      <p><?php echo $_SESSION['tableau'][$item['id']]['photo'][0]['libelle'] ?><br><b><?php echo $item['prix'].'$' ?></b></p>
     </div>
   <?php
 
