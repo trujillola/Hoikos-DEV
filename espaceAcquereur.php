@@ -26,8 +26,8 @@ session_start();
 if (!empty($_SESSION['userID'])) {
   if (!empty($_POST)) {
     include './php/enregistrerModification.php';
-    include './varSession.php';
   }
+  include './varSession.php';
 ?>
 
 <script>
