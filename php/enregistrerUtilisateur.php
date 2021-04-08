@@ -16,46 +16,44 @@ if (!empty($_POST)) {
     if ($mdp!=$mdpverif) {
         echo "<h2 class = 'titre' > ECHEC : votre compte n'a pas pu être créé : les mots de passe sont différents ! </h2>";
     }else{
-            //Ouverture écriture du fichier identifiant.txt
-            $fichier = './identifiant.txt';
-            $fh = fopen($fichier,'r+') or die("can't open file");
-            $ok = 1;
-            $i=0;
-            while(!feof($fh)){
-                $line = explode(';',fgets($fh));
-                //  echo '<script language="Javascript"> alert ("count line : '.count($line).' ") </script>';
+        $servername='localhost';
+        $username='laura';
+        $password='laura';
+        $dbname='Hoikos';
+    
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-                if (count($line)>2){
-                   // echo '<script language="Javascript"> alert ("i : '.$i.' et nom '.$line[1].' ") </script>';
-                    if ($email==$line[4]) {
-                        $ok = 0;
-                    }
-                    $i=$i+1;
-                }
-            }
-           // echo '<script language="Javascript"> alert ("i : '.$i.' ") </script>';
+        $sql = "SELECT id FROM Utilisateur WHERE email='$email';";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            echo '<script language="Javascript"> alert (" ECHEC : un compte est déjà lié à cette adresse mail ! ") </script>';
+            $conn->close();
 
-            if ($ok) {
-                $id=$i+1;
-                $ligne = $id.';'.$nom.';'.$prenom.';'.$civilite.';'.$email.';'.$codepostal.';'.$date.';'.$mdp.';'.$profil."\n";
-                fputs($fh, $ligne);
-                echo '<script language="Javascript"> alert ("Votre compte a été créé.") </script>';
-                $_SESSION['userID']=$id;
-                $_SESSION['userInfo']=explode(';',$ligne);
-                $civilite = $_POST['Civilité'];
-                unset($nom);
-                unset($prenom);
-                unset($email);
-                unset($codepostal);
-                unset($date);
-                unset($mdp);
-                unset($mdpverif);
-                unset($profil);
-                header('Location: ./espaceAcquereur.php');
-                exit();
-            }else{
-                echo '<script language="Javascript"> alert ("Ce compte existe déjà ! Essayez une autre adresse mail.") </script>';
-            }
+        } else {
+            $sql = "INSERT INTO Utilisateur(nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ('$nom','$prenom','$civilite','$email',$codepostal,'$mdp','$profil');";
+            $result=$conn->query($sql);
+            //On récup la ligne qu'on vient d'ajouter quand même
+            $result2=$conn->query("SELECT * FROM Utilisateur WHERE email='$email';");
+            $_SESSION['userInfo']=$result2->fetch_assoc();
+            $_SESSION['userID']=$_SESSION['userInfo']['id'];
+            $conn->close();
+            unset($nom);
+            unset($prenom);
+            unset($email);
+            unset($codepostal);
+            unset($date);
+            unset($mdp);
+            unset($mdpverif);
+            unset($profil);
+            header('Location: ./espaceAcquereur.php');
+            exit();
+        }
+
     }
 }
 ?>

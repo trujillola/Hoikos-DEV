@@ -51,7 +51,7 @@ if ($result->num_rows > 0) {
         }
     }
    // echo "</br>";
-   
+   //Recopération des infos sur les annonces
     $_SESSION['tableau'][$i]=array(
         'id'  =>$row["id"],
         'cat' => $row["cat"],

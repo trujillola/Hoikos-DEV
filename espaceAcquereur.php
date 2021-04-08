@@ -27,12 +27,12 @@ if (!empty($_SESSION['userID'])) {
   if (!empty($_POST)) {
     include './php/enregistrerModification.php';
   }
+
   include './varSession.php';
 
-  echo '<script language="Javascript"> alert ("'.count($_SESSION['userFav']).'") </script>';
-  for ($i=0; $i < count($_SESSION["userFav"]); $i++) { 
-    echo '<script language="Javascript"> alert ("'.$_SESSION["userFav"][$i].'") </script>';
-  }
+  // for ($i=0; $i < count($_SESSION["userFav"]); $i++) { 
+  //   echo '<script language="Javascript"> alert ("'.$_SESSION["userFav"][$i].'") </script>';
+  // }
   
 ?>
 
@@ -117,18 +117,17 @@ for ($i=0; $i <count($_SESSION['userFav']) ; $i++) {
     <form name='monformulaire' method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
    	  <p><select class="myinput bord" style="width:100%;" value="Civilité" required name="Civilité" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)">
     	  <option value="" disabled selected hidden>Civilité</option>	
-      	<option value="Madame" <?php if($_SESSION['userInfo'][3]=="Madame"){echo 'selected';}?>>Madame</option>
-    	  <option value="Monsieur" <?php if($_SESSION['userInfo'][3]=="Monsieur"){echo 'selected';}?>>Monsieur</option>
+      	<option value="Madame" <?php if($_SESSION['userInfo']['civilite']=="Madame"){echo 'selected';}?>>Madame</option>
+    	  <option value="Monsieur" <?php if($_SESSION['userInfo']['civilite']=="Monsieur"){echo 'selected';}?>>Monsieur</option>
  		    </select></p>
-      <p><input class="myinput bord" type="text" placeholder="Nom" required name="Nom" value="<?php echo $_SESSION['userInfo'][1];?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
-      <p><input class="myinput bord" type="text" placeholder="Prénom" required name="Prenom" value="<?php echo $_SESSION['userInfo'][2];?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"> </p>
-      <p><input class="myinput bord" type="text" placeholder="Email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required name="Adresse-email" value="<?php echo $_SESSION['userInfo'][4];?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
-	    <p><input class="myinput bord" type="text" placeholder="Code postal" pattern="^[0-9]{5}$" required name="Codepostal" value="<?php echo $_SESSION['userInfo'][5];?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
-      <p><input class="myinput bord" type="date" placeholder="Date de naissance" required name="Date" value="<?php echo $_SESSION['userInfo'][6];?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>   
-      <p><input class="myinput bord" type="hidden" name="MdpAncienCache" value="<?php echo $_SESSION['userInfo'][7];?>"></p>
+      <p><input class="myinput bord" type="text" placeholder="Nom" required name="Nom" value="<?php echo $_SESSION['userInfo']['nom'];?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
+      <p><input class="myinput bord" type="text" placeholder="Prénom" required name="Prenom" value="<?php echo $_SESSION['userInfo']['prenom'];?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"> </p>
+      <p><input class="myinput bord" type="text" placeholder="Email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required name="Adresse-email" value="<?php echo $_SESSION['userInfo']['email'];?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
+	    <p><input class="myinput bord" type="text" placeholder="Code postal" pattern="^[0-9]{5}$" required name="Codepostal" value="<?php echo $_SESSION['userInfo']['codePostal'];?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
+      <p><input class="myinput bord" type="hidden" name="MdpAncienCache" value="<?php echo $_SESSION['userInfo']['mdp'];?>"></p>
       <p><input class="myinput bord" type="password" placeholder="Ancient mot de passe" name="MdpVerif" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
 	    <p><input class="myinput bord" type="password" placeholder="Nouveau mot de passe" name="Mdp" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
-      <p><input class="myinput bord" type="hidden" name="Profil" value="<?php echo $_SESSION['userInfo'][8];?>"></p>
+      <p><input class="myinput bord" type="hidden" name="Profil" value="<?php echo $_SESSION['userInfo']['profil'];?>"></p>
       <button type="submit" class="noir boutton">Valider</button>
     </form>
   </div>

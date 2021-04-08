@@ -58,9 +58,8 @@
       <p><input class="myinput bord" type="text" placeholder="Prénom" required name="Prenom" value="<?php if(isset($prenom)){echo $prenom;}?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"> </p>
       <p><input class="myinput bord" type="text" placeholder="Email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required name="Adresse-email" value="<?php if(isset($email)){echo $email;}?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
 	    <p><input class="myinput bord" type="text" placeholder="Code postal" pattern="^[0-9]{5}$" required name="Codepostal" value="<?php if(isset($codepostal)){echo $codepostal;}?>" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"></p>
-      <p><input class="myinput bord" type="date" placeholder="Date de naissance" required name="Date" value="<?php if(isset($date)){echo $date;}?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>   
-      <p><input class="myinput bord" type="password" placeholder="Mot de passe" required name="Mdp" value="<?php if(isset($mdp)){echo $mdp;}?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
-	    <p><input class="myinput bord" type="password" placeholder="Vérification du mot de passe" required name="MdpVerif" value="<?php if(isset($mdpverif)){echo $mdpverif;}?>" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
+      <p><input class="myinput bord" type="password" placeholder="Mot de passe" required name="Mdp" value="" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
+	    <p><input class="myinput bord" type="password" placeholder="Vérification du mot de passe" required name="MdpVerif" value="" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></p>
 	    <p><select class="myinput bord" style="width:100%;" value="Profil" required name="Profil" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)">
             <option value="" disabled selected hidden>Profil</option>	
 	        	<option value="Propriétaire" <?php if(isset($profil)){if($profil=="Propriétaire"){echo 'selected';}}?>>Propriétaire</option>

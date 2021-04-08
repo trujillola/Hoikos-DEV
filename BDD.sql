@@ -46,7 +46,6 @@ CREATE TABLE Utilisateur(
 	civilite VARCHAR(100),
 	email VARCHAR(100),
 	codePostal INT(5),
-	dateNaissance DATETIME,
 	mdp VARCHAR(100),
 	profil VARCHAR(100)
 	);
@@ -361,13 +360,13 @@ INSERT INTO AvoirAtout (idAnnonce, idAtout) VALUES (15,19);
 /*---------------------- BDD utilisateurs------------------------*/
 /*---------------------------------------------------------------*/
 
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Trujillo","Laura","Madame","trujillola@eisti.eu",64000,"2000-08-27","azerty","Acquéreur");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Willy","Benoit","Monsieur","bens@eisti.eu",64000,"2000-08-17","oui","Propriétaire");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Cabrera","Cabrito","Monsieur","cabre@eisti.eu",64000,"2000-10-14","1234","Acquéreur");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Daguzan","Théo","Monsieur","to@eisti.eu",64000,"1998-12-28","0000","Acquéreur");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("De bureau","Chaise","Madame","chair@eisti.eu",64000,"2014-01-19","butt","Propriétaire");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Basse","Table","Madame","tabasse@eisti.eu",64000,"2014-02-23","non","Acquéreur");
-INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,dateNaissance,mdp,profil) VALUES ("Druot","Bob","Monsieur","bob@eisti.eu",64000,"2002-10-21","plouf","Propriétaire");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Trujillo","Laura","Madame","trujillola@eisti.eu",64000,"azerty","Acquéreur");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Willy","Benoit","Monsieur","bens@eisti.eu",64000,"oui","Propriétaire");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Cabrera","Cabrito","Monsieur","cabre@eisti.eu",64000,"1234","Acquéreur");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Daguzan","Théo","Monsieur","to@eisti.eu",64000,"0000","Acquéreur");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("De bureau","Chaise","Madame","chair@eisti.eu",64000,"butt","Propriétaire");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Basse","Table","Madame","tabasse@eisti.eu",64000,"non","Acquéreur");
+INSERT INTO Utilisateur (nom,prenom,civilite,email,codePostal,mdp,profil) VALUES ("Druot","Bob","Monsieur","bob@eisti.eu",64000,"plouf","Propriétaire");
 
 
 /*---------------------- BDD favoris------------------------*/

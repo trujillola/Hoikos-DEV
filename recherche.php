@@ -132,7 +132,6 @@ function changeFavori(id){
   <?php
   foreach ($_SESSION['tableau'] as $item){
    if($item['cat']==0){
-    echo '<script language="Javascript"> alert ("'.in_array($item['id'],$fav).'") </script>';
      if (in_array($item['id'],$fav)) {
       $class="favori fa fa-heart";
      }else{

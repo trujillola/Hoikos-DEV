@@ -24,7 +24,22 @@ if (!empty($_POST)) {
         $row = $result->fetch_assoc();
         $_SESSION['userID']=$row['id'];
         $_SESSION['userInfo']=$row;
-        include './recupereFavoris.php';
+        
+        //Code du fichier recupereFavori.php que je n'arrive pas à inclure simplement.
+        //---------------------------------------------------------------------------------
+        $user=$_SESSION['userID'];
+        $_SESSION['userFav']=array();
+        $sql = "SELECT idAnnonce FROM Choisir WHERE idUtilisateur=$user;";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+          $i=0;
+          while($row = $result->fetch_assoc()) {
+            $_SESSION['userFav'][$i]=$row['idAnnonce'];
+            $i=$i+1;
+          }
+        }
+        //---------------------------------------------------------------------------------
+        
         $conn->close();
         header('Location: ./espaceAcquereur.php');
         exit();
