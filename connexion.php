@@ -26,7 +26,7 @@
     unset($_SESSION['userID']);
     unset($_SESSION['userFav']);                          
     include './php/validationConnexion.php';
-    ?>
+?>
 
 <body>
     

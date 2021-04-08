@@ -4,28 +4,22 @@ session_start();
 $id=$_POST['id'];
 $user=$_SESSION['userID'];
 
-$filename = '../favoris.txt';
-$fh = fopen($filename,"a+") or die("can't open file");
+$servername='localhost';
+$username='laura';
+$password='laura';
+$dbname='Hoikos';
 
-while(!feof($fh)){
-    $line=fgets($fh);
-    $tabline = explode(';',$line);
-    $newline="$user";
-    if($user==$tabline[0]){
-        for ($i=1;$i < count($tabline)-1; $i++) { 
-            if($id!=$tabline[$i]){
-                $newline=$newline.';'.$tabline[$i];
-            }
-        }
-        $newline=$newline.';'."\n";
-        $userline=$newline;
-        $contents=file_get_contents($filename);
-        $contents = str_replace($line,$newline,$contents);
-        file_put_contents($filename,$contents);	
-    }
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
-fclose($fh);
-$fav=explode(';',$userline);
-$_SESSION['userFav']=array_slice($fav,-count($fav)+1,count($fav)-1);
 
+$sql = "DELETE FROM Choisir WHERE idAnnonce=$id AND idUtilisateur=$user;";
+$result = $conn->query($sql);
+include './recupereFavoris.php';
+
+$conn->close();
 ?>

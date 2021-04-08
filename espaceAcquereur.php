@@ -28,6 +28,12 @@ if (!empty($_SESSION['userID'])) {
     include './php/enregistrerModification.php';
   }
   include './varSession.php';
+
+  echo '<script language="Javascript"> alert ("'.count($_SESSION['userFav']).'") </script>';
+  for ($i=0; $i < count($_SESSION["userFav"]); $i++) { 
+    echo '<script language="Javascript"> alert ("'.$_SESSION["userFav"][$i].'") </script>';
+  }
+  
 ?>
 
 <script>
@@ -77,14 +83,11 @@ function retireFavori(id){
 
 
     <?php
-      //echo '<script language="Javascript"> alert ("'.count($_SESSION['userFav']).'") </script>';
-
-for ($i=0; $i <count($_SESSION['userFav'])-1 ; $i++) { 
+for ($i=0; $i <count($_SESSION['userFav']) ; $i++) { 
 
   $fav=$_SESSION['userFav'][$i];
   $item=$_SESSION['tableau'][$fav];
- // echo '<script language="Javascript"> alert ("'.$i.'") </script>';
- // echo '<script language="Javascript"> alert ( "fav :'.$fav.'") </script>';
+
  echo $_SESSION['tableau'][$item['id']]['nom'];
   ?>
  <div class="item" id="<?php echo 'bien'.$item['id']?>">
