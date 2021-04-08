@@ -15,7 +15,7 @@
   include './php/varSession.php';
   $_SESSION['idItem']=$_GET['id'];
   $idItem=$_SESSION['idItem'];
-  $photos=explode('%',$_SESSION['tableau'][$idItem]['photo']);
+  $photos=$_SESSION['tableau'][$idItem]['photo'];
   if (!empty($_POST)) {
     $tab=$_SESSION['erreurs'];
   } else {
