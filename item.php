@@ -26,7 +26,7 @@
    }else{
     $class="fa-2x favori fa fa-heart-o";
    }
-   echo '<script language="Javascript"> alert (" count='.$class.' ") </script>';
+   //echo '<script language="Javascript"> alert (" count='.$class.' ") </script>';
 
 ?>
 <script>
@@ -91,7 +91,7 @@
 
   <div class="rangee-padding section">
   <?php
-    for ($i=1; $i <count($photos); $i++) { 
+    for ($i=0; $i <count($photos); $i++) { 
       //echo '<img src"./images/'.$photo[$i]['chemin'].'">';
       echo '<div class="colonne s2">';
       echo '<img class="demo opacité hover-opacité-off" src="./images/'.$photos[$i]['chemin'].'" style="width:100%;cursor:pointer" onclick="affiche(this.src,this.title)" title="'.$photos[$i]['libelle'].'">';

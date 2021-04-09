@@ -140,7 +140,7 @@ function changeFavori(id){
   ?>
   <div class="item">
       <div class="position-conteneur">
-        <img  src="<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
+        <img  src="./images/<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
         <?php
         if (isset($_SESSION['userID'])) {       
           echo '<div class="conteneur affiche-haut centre" id="intéressé">
@@ -192,7 +192,7 @@ foreach ($_SESSION['tableau'] as $item){
 ?>
 <div class="item">
     <div class="position-conteneur"> 
-      <img  src="<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
+      <img  src="./images/<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
       <?php
         if (isset($_SESSION['userID'])) {       
           echo ' <div class="conteneur affiche-haut centre" id="intéressé">
@@ -243,7 +243,7 @@ foreach ($_SESSION['tableau'] as $item){
   ?>
   <div class="item">
       <div class="position-conteneur">
-        <img  src="<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
+        <img  src="./images/<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%" onclick="onClick(this)">
         <?php
         if (isset($_SESSION['userID'])) {       
           echo ' <div class="conteneur affiche-haut centre" id="intéressé">

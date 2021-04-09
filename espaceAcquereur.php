@@ -92,7 +92,7 @@ for ($i=0; $i <count($_SESSION['userFav']) ; $i++) {
   ?>
  <div class="item" id="<?php echo 'bien'.$item['id']?>">
       <div class="position-favoris">
-        <img src="<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%">
+        <img src="./images/<?php echo $item['photo'][0]['chemin'] ?>" style="width:100%">
         <div class="conteneur display-topleft">
           <p><a class="boutton large black card invisible" id ="<?php echo $item['id'];?>" onclick="retireFavori(this.id)">Retirer des favoris</a></p>
         </div>
