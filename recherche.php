@@ -152,7 +152,7 @@ function changeFavori(id){
           <p><a href="./item.php?id=<?php echo $item['id']?>" class="boutton large black card invisible">Voir l'annonce</a></p>
         </div>
       </div>
-      <p><?php echo $item['nom'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
+      <p><?php echo $item['photo'][0]['libelle'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
     </div>
 
 

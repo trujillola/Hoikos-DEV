@@ -13,9 +13,10 @@
   session_start();
   include './php/contact.php';
   include './php/varSession.php';
-  $_SESSION['idItem']=$_GET['id'];
-  $idItem=$_SESSION['idItem'];
+  $idItem=$_GET['id'];
+  $idItem=$idItem-1;
   $photos=$_SESSION['tableau'][$idItem]['photo'];
+  echo '<script language="Javascript"> alert (" count='.count($photos).' ") </script>';
   if (!empty($_POST)) {
     $tab=$_SESSION['erreurs'];
   } else {
@@ -82,7 +83,7 @@
 
   <div class="rangee-padding section">
   <?php
-    for ($i=1; $i < 4; $i++) { 
+    for ($i=1; $i <count($photos); $i++) { 
       //echo '<img src"./images/'.$photo[$i]['chemin'].'">';
       echo '<div class="colonne s2">';
       echo '<img class="demo opacité hover-opacité-off" src="./images/'.$photos[$i]['chemin'].'" style="width:100%;cursor:pointer" onclick="affiche(this.src,this.title)" title="'.$photos[$i]['libelle'].'">';
