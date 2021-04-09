@@ -85,10 +85,10 @@ function retireFavori(id){
     <?php
 for ($i=0; $i <count($_SESSION['userFav']) ; $i++) { 
 
-  $fav=$_SESSION['userFav'][$i];
+  $fav=$_SESSION['userFav'][$i]-1;
   $item=$_SESSION['tableau'][$fav];
-
- echo $_SESSION['tableau'][$item['id']]['nom'];
+  $id=$item['id']-1;
+  echo '<script language="Javascript"> alert ("'.$_SESSION['tableau'][$id]['id'].'") </script>';
   ?>
  <div class="item" id="<?php echo 'bien'.$item['id']?>">
       <div class="position-favoris">
@@ -100,7 +100,7 @@ for ($i=0; $i <count($_SESSION['userFav']) ; $i++) {
           <p><a href="./item.php?id=<?php echo $item['id']?>" class="boutton large black card invisible">Voir l'annonce</a></p>
         </div>
       </div>
-      <p><?php echo $_SESSION['tableau'][$item['id']]['photo'][0]['libelle'] ?><br><b><?php echo $item['prix'].'$' ?></b></p>
+      <p><?php echo $_SESSION['tableau'][$id]['photo'][0]['libelle'] ?><br><b><?php echo $item['prix'].'$' ?></b></p>
     </div>
   <?php
 
