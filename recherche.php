@@ -23,11 +23,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   include './php/varSession.php';
 
   $servername='localhost';
-  $username='laura';
-  $password='laura';
   $dbname='Hoikos';
   // Create connections
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  $conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
   // Check connection
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -204,7 +202,7 @@ foreach ($_SESSION['tableau'] as $item){
         <p><a href="./item.php?id=<?php echo $item['id']?>" class="boutton large black card invisible">Voir l'annonce</a></p>
       </div>
     </div>
-    <p><?php echo $item['nom'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
+    <p><?php echo $item['photo'][0]['libelle'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
   </div>
 
 
@@ -255,7 +253,7 @@ foreach ($_SESSION['tableau'] as $item){
           <p><a href="./item.php?id=<?php echo $item['id']?>" class="boutton large black card invisible">Voir l'annonce</a></p>
         </div>
       </div>
-      <p><?php echo $item['nom'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
+      <p><?php echo $item['photo'][0]['libelle'] ?><br><b><?php echo $item['prix']."$" ?></b></p>
     </div>
 
 
