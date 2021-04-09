@@ -6,12 +6,12 @@
 $_SESSION['tableau']=array();
 
 $servername='localhost';
-$username='laura';
-$password='laura';
+$_SESSION['username'] = 'verdierame';
+$_SESSION['password'] = 'Im4uema3cohb!';
 $dbname='Hoikos';
 
 // Create connections
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -32,7 +32,6 @@ if ($result->num_rows > 0) {
         $j=0;
         while($row2 = $res->fetch_assoc()) {
             $photo[$j]=$row2;
-            //echo "Chemin : ".$photo[$i]["libelle"].$photo[$i]["chemin"];
             $row2 = $res->fetch_assoc();
             $j=$j+1;
         }
