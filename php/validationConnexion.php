@@ -5,15 +5,7 @@ if (!empty($_POST)) {
     $mail = $_POST['Adresse-email'];
     $mdp=$_POST['Mdp'];
 
-    $servername='localhost';
-    $dbname='Hoikos';
-
-    // Create connection
-    $conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require 'connexionBDD.php' ;
 
     $sql = "SELECT * FROM Utilisateur WHERE email='$mail' AND mdp='$mdp';";
     $result = $conn->query($sql);

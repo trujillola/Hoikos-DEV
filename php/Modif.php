@@ -5,15 +5,7 @@ $classe=$_POST["classe"];
 $id=$_POST["identifiant"];
 $user=$_SESSION['userID'];
 
-$servername='localhost';
-$dbname='Hoikos';
-
-// Create connection
-$conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+require 'connexionBDD.php' ;
 
 if ($classe=="fa-heart-o") { //On ajoute une ligne à la table Choisir
 

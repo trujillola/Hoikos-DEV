@@ -16,15 +16,7 @@ if (!empty($_POST)) {
     if ($mdp!=$mdpverif) {
         echo "<h2 class = 'titre' > ECHEC : votre compte n'a pas pu être créé : les mots de passe sont différents ! </h2>";
     }else{
-        $servername='localhost';
-        $dbname='Hoikos';
-    
-        // Create connection
-        $conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        require 'connexionBDD.php' ;
 
         $sql = "SELECT id FROM Utilisateur WHERE email='$email';";
         $result = $conn->query($sql);

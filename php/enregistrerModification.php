@@ -21,15 +21,7 @@
         }
     }
 
-    $servername='localhost';
-    $dbname='Hoikos';
-
-    // Create connection
-    $conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    }
+    require 'connexionBDD.php' ;
 
     $sql = "UPDATE Utilisateur SET nom='$nom', prenom='$prenom', civilite='$civilite', email='$email', codePostal=$codepostal, mdp='$mdp', profil='$profil' WHERE id=$user;";
     $result = $conn->query($sql);

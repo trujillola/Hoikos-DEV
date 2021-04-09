@@ -5,17 +5,11 @@
 //Tableau indexé
 $_SESSION['tableau']=array();
 
-$servername='localhost';
+
 $_SESSION['username'] = 'verdierame';
 $_SESSION['password'] = 'Im4uema3cohb!';
-$dbname='Hoikos';
 
-// Create connections
-$conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+require 'connexionBDD.php' ;
 
 $sql = "SELECT * FROM Annonce;";
 $result = $conn->query($sql);
