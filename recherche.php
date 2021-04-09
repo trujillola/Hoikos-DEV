@@ -2,10 +2,8 @@
 <html>
 <head>
 <title>Recherche</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php require 'php/header.php' ?>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 <link href="./css/css.css" rel="stylesheet">
 
@@ -22,14 +20,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   session_start();
   include './php/varSession.php';
 
-  $servername='localhost';
-  $dbname='Hoikos';
-  // Create connections
-  $conn = new mysqli($servername, $_SESSION['username'], $_SESSION['password'], $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+  require 'php/connexionBDD.php' ;
   include './php/recupereFavoris.php';
   $conn->close();
 
@@ -74,7 +65,7 @@ function changeFavori(id){
   <div class="w3-bar white wide padding card">
     <a href="index.php" class="w3-bar-item button"><b>H</b> Oïkos</a>
      <div class="w3-right">
-      <a href="./index.php#about" class="w3-bar-item button">À propos</a>
+      <a href="./index.php#àpropos" class="w3-bar-item button">À propos</a>
       <a href="./index.php#contact" class="w3-bar-item  button">Contact</a>
       <a href="connexion.php" class="w3-bar-item boutton"><?php
         if (isset($_SESSION['userID'])) {       
@@ -277,9 +268,7 @@ foreach ($_SESSION['tableau'] as $item){
 </div>
 
 <!-- Footer -->
-<footer  class="center padding xlarge"style="background-color:#7A8A93">
-  <p>Powered by <a href="index.php#about" title="Présentation" target="_blank" class="hover-text-green">Amélie&Laura</a></p>
-</footer>
+<?php require 'php/footer.php' ?>
 
 
 <script>

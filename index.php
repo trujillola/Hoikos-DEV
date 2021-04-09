@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <title>Hestia Oïkos</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./css/index.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<?php require 'php/header.php' ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 <script type="text/javascript" src="./js/formulaires.js"></script> 
+<link rel="stylesheet" href="./css/index.css">
 
 
 <?php 
@@ -99,9 +97,7 @@ if (!empty($_POST)) {
     </div>
 
     <!-- Footer -->
-    <footer  class="centre padding large"style="background-color:#37423a" >
-      <p style="color:white" >Powered by <a href="#">Amélie&Laura</a></p>
-    </footer>
+    <?php require 'php/footer.php' ?>
 
 <script type="text/javascript">
   var erreurs = <?php echo json_encode($tab) ?>;

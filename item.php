@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <title>Annonce</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php require 'php/header.php' ?>
 <link rel="stylesheet" href="./css/item.css"> 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 
 
 <?php 
@@ -51,7 +49,7 @@
           echo 'Mon espace';
         }
         ?></a>
-      <a href="./index.php#about" class="w3-bar-item boutton">À propos</a>
+      <a href="./index.php#àpropos" class="w3-bar-item boutton">À propos</a>
       <a href="./index.php#contact" class="w3-bar-item  boutton">Contact</a>
     </div>  
   </div>
@@ -165,9 +163,7 @@
 </div>
 
  <!-- Footer -->
- <footer  class="centre padding large" style="background-color:#37423a; margin-top:2%;;">
-  <p style="color:white" >Powered by <a href="#">Amélie&Laura</a></p>
-</footer>>
+ <?php require 'php/footer.php' ?>
 
 <script type="text/javascript">
   var erreurs = <?php echo json_encode($tab)?>;

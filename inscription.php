@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <title>Inscription</title>
-<meta charset="UTF-8" lang="french">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php require 'php/header.php' ?>
 <link rel="stylesheet" href="./css/inscription.css">  
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <script type="text/javascript" src="./js/formulaires.js"></script> 
 
 <?php 
@@ -23,7 +21,7 @@
     <a href="index.php" class="bar-item boutton"><b>H</b> Oïkos</a>
      <div class="droite">
       <a href="./connexion.php" class="bar-item boutton">Connexion</a>
-      <a href="./index.php#about" class="bar-item boutton">À propos</a>
+      <a href="./index.php#àpropos" class="bar-item boutton">À propos</a>
       <a href="./index.php#contact" class="bar-item boutton">Contact</a>
 	</div>  
   </div>
@@ -72,9 +70,7 @@
 </div>
  
 	<!-- Footer -->
-<footer  class="centre padding large"style="background-color:#37423a" >
-  <p style="color:white" >Powered by <a href="#">Amélie&Laura</a></p>
-</footer>
+  <?php require 'php/footer.php' ?>
 	
 
 </body>

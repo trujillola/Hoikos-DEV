@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
     <title>Connexion</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require 'php/header.php' ?>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
     <link href="./css/css.css" rel="stylesheet">
     <link href="./css/inscription.css" rel="stylesheet">
     <script type="text/javascript" src="./js/formulaires.js"></script> 
@@ -35,7 +33,7 @@
   <div class="w3-bar white wide padding card">
     <a href="index.php" class="w3-bar-item menu "><b>H</b> Oïkos</a>
      <div class="w3-right">
-      <a href="index.php#about" class="w3-bar-item menu">À propos</a>
+      <a href="index.php#àpropos" class="w3-bar-item menu">À propos</a>
       <a href="index.php#contact" class="w3-bar-item menu ">Contact</a>
 	</div>  
   </div>
@@ -63,9 +61,7 @@
 </div>
 
 <!-- Footer -->
-<footer  class="center padding xlarge"style="background-color:#37423a">
-  <p>Powered by <a href="index.php#about" title="Présentation" target="_blank" class="hover-text-green">Amélie&Laura</a></p>
-</footer>
+<?php require 'php/footer.php' ?>
 
 </body>
 </html>

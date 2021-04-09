@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <title>Espace</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php require 'php/header.php' ?>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link href="./css/css.css" rel="stylesheet">
 <link rel="stylesheet" href="./css/inscription.css">  
 
@@ -47,7 +45,6 @@ function retireFavori(id){
 	xhttp.onreadystatechange = function() {
 		if ((this.readyState == 4) && (this.status == 200)) {	
        document.getElementById(identifiantDIV).style.display="none";
-       alert('ON EST OK');
 		}
 	};
 	
@@ -65,7 +62,7 @@ function retireFavori(id){
     <a href="index.php" class="w3-bar-item menu "><b>H</b> Oïkos</a>
      <div class="w3-right">
       <a href="connexion.php"  class="w3-bar-item menu">Me déconnecter</a>
-      <a href="index.php#about" class="w3-bar-item menu">À propos</a>
+      <a href="index.php#àpropos" class="w3-bar-item menu">À propos</a>
       <a href="index.php#contact" class="w3-bar-item menu ">Contact</a>
 	</div>  
   </div>
@@ -134,9 +131,7 @@ for ($i=0; $i <count($_SESSION['userFav']) ; $i++) {
   </div>
 
 <!-- Footer -->
-<footer  class="center padding xlarge"style="background-color:#7A8A93">
-  <p>Powered by <a href="index.html#about" title="Présenttion" target="_blank" class="hover-text-green">Amélie&Laura</a></p>
-</footer>
+<?php require 'php/footer.php' ?>
 
 <?php 
 }else{
