@@ -9,10 +9,25 @@ function affiche(src,title) {
 }
 
 function changeFavori(id){
-  if (document.getElementById(id).classList.contains('fa-heart-o')){
-    document.getElementById(id).classList.add('fa-heart');
-    document.getElementById(id).classList.remove('fa-heart-o');
-  }else{
-    document.getElementById(id).classList.remove('fa-heart');
-    document.getElementById(id).classList.add('fa-heart-o');  }
-}
+  //Ajax
+	var identifiant=id;
+  var classe = document.getElementById(identifiant).classList;
+	xhttp = new XMLHttpRequest(); 
+	 
+	xhttp.onreadystatechange = function() {
+		if ((this.readyState == 4) && (this.status == 200)) {	
+      if (document.getElementById(identifiant).classList.contains('fa-heart-o')){
+        document.getElementById(identifiant).classList.add('fa-heart');
+        document.getElementById(identifiant).classList.remove('fa-heart-o');
+        }else{
+           document.getElementById(identifiant).classList.remove('fa-heart');
+           document.getElementById(identifiant).classList.add('fa-heart-o');  
+          }
+		}
+	};
+	
+	xhttp.open("POST","./php/Modif.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("identifiant="+identifiant+"&classe="+classe[3]); 
+	 
+};

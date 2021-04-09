@@ -88,7 +88,7 @@ for ($i=0; $i <count($_SESSION['userFav']) ; $i++) {
   $fav=$_SESSION['userFav'][$i]-1;
   $item=$_SESSION['tableau'][$fav];
   $id=$item['id']-1;
-  echo '<script language="Javascript"> alert ("'.$_SESSION['tableau'][$id]['id'].'") </script>';
+ // echo '<script language="Javascript"> alert ("'.$_SESSION['tableau'][$id]['id'].'") </script>';
   ?>
  <div class="item" id="<?php echo 'bien'.$item['id']?>">
       <div class="position-favoris">

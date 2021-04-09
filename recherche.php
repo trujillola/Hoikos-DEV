@@ -61,7 +61,7 @@ function changeFavori(id){
 	
 	xhttp.open("POST","./php/Modif.php", true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("identifiant="+identifiant+"&classe="+classe[2]); 
+	xhttp.send("identifiant="+identifiant+"&classe="+classe[3]); 
 	 
 };
 </script>
@@ -133,9 +133,9 @@ function changeFavori(id){
   foreach ($_SESSION['tableau'] as $item){
    if($item['cat']==0){
      if (in_array($item['id'],$fav)) {
-      $class="favori fa fa-heart";
+      $class="fa-x favori fa fa-heart";
      }else{
-      $class="favori fa fa-heart-o";
+      $class="fa-x favori fa fa-heart-o";
      }
   ?>
   <div class="item">
@@ -184,9 +184,9 @@ function changeFavori(id){
 foreach ($_SESSION['tableau'] as $item){
  if($item['cat']==1){
   if (in_array($item['id'],$fav)) {
-    $class="favori fa fa-heart";
+    $class="fa-x favori fa fa-heart";
    }else{
-    $class="favori fa fa-heart-o";
+    $class="fa-x favori fa fa-heart-o";
    }
 
 ?>
@@ -236,9 +236,9 @@ foreach ($_SESSION['tableau'] as $item){
   foreach ($_SESSION['tableau'] as $item){
    if($item['cat']==2){
     if (in_array($item['id'],$fav)) {
-      $class="favori fa fa-heart";
+      $class="fa-x favori fa fa-heart";
      }else{
-      $class="favori fa fa-heart-o";
+      $class="fa-x favori fa fa-heart-o";
      }
   ?>
   <div class="item">

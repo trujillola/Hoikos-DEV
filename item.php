@@ -16,14 +16,22 @@
   $idItem=$_GET['id'];
   $idItem=$idItem-1;
   $photos=$_SESSION['tableau'][$idItem]['photo'];
-  echo '<script language="Javascript"> alert (" count='.count($photos).' ") </script>';
   if (!empty($_POST)) {
     $tab=$_SESSION['erreurs'];
   } else {
     $tab=array(1,1,1,1,1);
   }
-?>
+  if (in_array($_GET['id'],$_SESSION['userFav'])) {
+    $class="fa-2x favori fa fa-heart";
+   }else{
+    $class="fa-2x favori fa fa-heart-o";
+   }
+   echo '<script language="Javascript"> alert (" count='.$class.' ") </script>';
 
+?>
+<script>
+
+</script>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -68,7 +76,7 @@
         if (isset($_SESSION['userID'])) {
         ?>
          <div class="conteneur affiche-haut centre" id="intéressé">
-          <p><i id = "fav1" class="fa fa-heart-o fa-2x favori" onclick = "changeFavori(this.id)"></i></i></p>
+          <p><i id = "<?php echo $_GET['id']; ?>" class="<?php echo $class; ?>" onclick = "changeFavori(this.id)"></i></i></p>
          </div>
          <?php
         }
