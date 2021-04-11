@@ -79,6 +79,10 @@ input[type="date"]:focus:before,input[type="date"]:valid:before {
 	top:0;
 	left : 0;
 }
+
+.center{
+	text-align: center;
+}
 .centre{
 	/*dispautolay:inline-block;*/
 	width:auto;
