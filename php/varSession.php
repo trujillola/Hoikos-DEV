@@ -6,9 +6,6 @@
 $_SESSION['tableau']=array();
 
 
-$_SESSION['username'] = 'verdierame';
-$_SESSION['password'] = 'Im4uema3cohb!';
-
 require 'connexionBDD.php' ;
 
 $sql = "SELECT * FROM Annonce;";
