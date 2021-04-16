@@ -6,8 +6,8 @@
 $_SESSION['tableau']=array();
 
 
-$_SESSION['username'] = 'verdierame';
-$_SESSION['password'] = 'Im4uema3cohb!';
+$_SESSION['username'] = 'laura';
+$_SESSION['password'] = 'laura';
 
 require 'connexionBDD.php' ;
 

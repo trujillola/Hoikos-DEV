@@ -61,9 +61,6 @@
 <div class="contenu blanc bord-gauche bord-droit">
 
   <!-- Affichage des images -->
-  <?php   
-
-  ?>
   <div class="conteneur" id="apartment">
     <h2><strong><?php echo $_SESSION['tableau'][$idItem]['photo'][0]['libelle'];?></strong></h2>
 	  <h2 class="texte-gris"><strong><b><?php echo $_SESSION['tableau'][$idItem]['prix']."$";?></b></strong></h2>
@@ -158,9 +155,8 @@
     <div style = "height:10%;"></div>
 	
 	<!-- Fin du contenu de la page -->
-	</div>
-
-</div>
+  </div>
+  </div>
 
  <!-- Footer -->
  <?php require 'php/footer.php' ?>
