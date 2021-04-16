@@ -1,4 +1,5 @@
 <?php
+
 $servername='localhost';
   $dbname='Hoikos';
   // Create connections

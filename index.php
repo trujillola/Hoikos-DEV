@@ -85,9 +85,9 @@ if (!empty($_POST)) {
       <h3 class="bord-bas bord-gris-clair padding-16">Contact</h3>
       <p>Entrez en contact avec nous pour parler de votre projet.</p>
       <form  name='monformulaire' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-        <input class="myinput section bord" type="text" placeholder="Nom" value="<?php if(isset($nom)){echo $nom;}?>" required name="Nom" pattern="^[ a-zA-Z]+$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"/>
-        <input class="myinput section bord" type="text" placeholder="Prenom" value="<?php if(isset($prenom)){echo $prenom;}?>" required name="Prenom" pattern="^[ a-zA-Z]+$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"/>
-        <input class="myinput section bord" type="text" placeholder="Email"  value="<?php if(isset($mail)){echo $mail;}?>" required name="Adresse-email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)">
+        <input class="myinput section bord" type="text" placeholder="Nom" value="<?php echo $_SESSION['userInfo']['nom'];?>" required name="Nom" pattern="^[ a-zA-Z]+$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"/>
+        <input class="myinput section bord" type="text" placeholder="Prenom" value="<?php echo $_SESSION['userInfo']['prenom'];?>" required name="Prenom" pattern="^[ a-zA-Z]+$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)"/>
+        <input class="myinput section bord" type="text" placeholder="Email"  value="<?php echo $_SESSION['userInfo']['email'];?>" required name="Adresse-email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" oninvalid="validationPattern(this.name)" onblur="validationPattern(this.name)">
         <input class="myinput section bord" type="text" placeholder="Sujet"  value="<?php if(isset($sujet)){echo $sujet;}?>" required name="Sujet" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)">
         <textarea class="myinput section bord" type="text" placeholder="Message"  value="<?php if(isset($message)){echo $message;}?>" required name="Message" oninvalid="validationSimple(this.name)" onblur="validationSimple(this.name)"></textarea>
         <button  onclick="" class="noir boutton section" type="submit" >

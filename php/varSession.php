@@ -5,10 +5,6 @@
 //Tableau indexé
 $_SESSION['tableau']=array();
 
-
-$_SESSION['username'] = 'laura';
-$_SESSION['password'] = 'laura';
-
 require 'connexionBDD.php' ;
 
 $sql = "SELECT * FROM Annonce;";
